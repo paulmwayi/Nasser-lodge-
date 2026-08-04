@@ -1,35 +1,66 @@
 # Nasser Lodge Website
 
-Booking-first website for Nasser Lodge, Mongu, Zambia. See `PRD.md` for the
-full product spec.
+"Where luxury feels like home" — Mongu, Western Province, Zambia
 
-## Run locally (in Termux or anywhere with Node.js)
+A responsive, brand-aligned marketing website built per the Nasser Lodge 3D Website PRD (v1.0, August 2026).
+
+## Quick Start
+
+Open `index.html` in a browser, or serve locally:
 
 ```bash
-npm install
-npm run dev
+# Using Python
+python3 -m http.server 8000
+
+# Using Node.js
+npx serve .
 ```
 
-Then open http://localhost:3000
+Then visit `http://localhost:8000`
 
-## Deploy
+## File Structure
 
-Push to GitHub, then import the repo at vercel.com — it auto-detects Next.js.
+```
+nasser-lodge/
+├── index.html              # Main landing page (single-page scroll narrative)
+├── pages/
+│   ├── gallery.html        # Photo gallery (grid layout)
+│   └── about.html          # About, directions, story
+├── css/
+│   └── style.css           # Global stylesheet (design system + responsive)
+├── js/
+│   └── main.js             # Navigation, animations, form submission
+└── images/                 # (Placeholder — add actual photos here)
+```
 
-## What's built so far
+## Design System
 
-- Homepage: hero, floating booking widget, sticky booking bar on scroll,
-  rooms grid, amenities, location map, reviews, contact footer.
-- `/book`: placeholder reservation page (reads dates/guests/room from the
-  widget) — payment integration (Airtel Money, MTN MoMo, card) is the next
-  piece to build here, per PRD section 6.
+| Attribute | Value |
+|---|---|
+| **Palette** | Dark charcoal/warm tones — "golden hour over the Zambezi floodplain" |
+| **Primary accent** | `#c8944a` (Gold) |
+| **Background** | `#0d0d0d` (Deep charcoal) → `#1e1b16` (Warm dark) alternating |
+| **Display font** | Playfair Display |
+| **Body font** | Inter |
+| **Spacing philosophy** | Generous negative space, one idea per section |
 
-## Next steps
+## Key Features (Current)
 
-1. Replace placeholder room data in `data/rooms.ts` with confirmed
-   inventory and rates.
-2. Replace the gradient placeholders in `app/page.tsx` and
-   `components/RoomCard.tsx` with real photography.
-3. Build the actual availability + payment API routes and wire them into
-   `app/book/page.tsx`.
-4. Set up a CMS (or simple admin panel) so staff can manage rooms/rates.
+- Scroll-driven narrative chapters matching the PRD story arc
+- Mobile-responsive with hamburger navigation
+- Scroll-triggered animations (Intersection Observer)
+- Room cards with rates, amenities, and glass-tag styling
+- Enquiry form with WhatsApp fallback submission
+- Direct WhatsApp, Call, and Email CTAs
+- Social proof section (Google 4.2★, guest testimonials)
+- Location/culture section (Kuomboka, Liuwa Plain, Barotse Floodplain)
+- Structured data (Schema.org LodgingBusiness) for SEO
+- Open Graph meta tags
+
+## Contact
+
+- **Phone/WhatsApp**: +260 976 327 007
+- **Email**: nasserlodges49@gmail.com
+- **Address**: P4HQ+W93, Lusaka Road, Mongu, Western Province, Zambia
+
+*Built as a living document — designed to evolve with the lodge's needs.*

@@ -1,0 +1,117 @@
+/* ============================================================
+   NASSER LODGE — Main JavaScript
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ----- Navigation Scroll Effect ----- */
+  const nav = document.querySelector('.nav');
+  const navToggle = document.querySelector('.nav__toggle');
+  const navLinks = document.querySelector('.nav__links');
+  const navLinkItems = document.querySelectorAll('.nav__links a');
+
+  function updateNav() {
+    if (window.scrollY > 60) {
+      nav.classList.add('nav--scrolled');
+    } else {
+      nav.classList.remove('nav--scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  /* ----- Mobile Nav Toggle ----- */
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('nav__links--open');
+    navToggle.classList.toggle('nav__toggle--open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav__links--open');
+      navToggle.classList.remove('nav__toggle--open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ----- Scroll Animations (Intersection Observer) ----- */
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
+  };
+
+  const animateObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-on-scroll--visible');
+        if (entry.target.classList.contains('stagger-children')) {
+          entry.target.classList.add('stagger-children--visible');
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll, .stagger-children').forEach(el => {
+    animateObserver.observe(el);
+  });
+
+  /* ----- Smooth Scroll for Anchor Links ----- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ----- Booking Form Submission ----- */
+  const bookingForm = document.getElementById('booking-form');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(bookingForm);
+      const data = Object.fromEntries(formData.entries());
+
+      const message = encodeURIComponent(
+        `*Nasser Lodge Booking Enquiry*\n\n` +
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n` +
+        `Phone: ${data.phone}\n` +
+        `Check-in: ${data.checkin}\n` +
+        `Check-out: ${data.checkout}\n` +
+        `Room Type: ${data.room_type}\n` +
+        `Guests: ${data.guests}\n` +
+        `Message: ${data.message || '—'}`
+      );
+
+      const whatsappUrl = `https://wa.me/260976327007?text=${message}`;
+
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '✓ Sent! Opening WhatsApp…';
+      submitBtn.style.background = '#25D366';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+        bookingForm.reset();
+      }, 800);
+    });
+  }
+
+  /* ----- Current Year in Footer ----- */
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+});

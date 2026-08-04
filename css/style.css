@@ -241,6 +241,16 @@ h3 {
   );
 }
 
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.45;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -342,17 +352,22 @@ h3 {
   align-items: center;
 }
 
-/* ---------- Media Block (image placeholder) ---------- */
+/* ---------- Media Block (image) ---------- */
 .media-block {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   background: var(--color-surface);
   aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgba(200, 148, 74, 0.08);
+}
+
+.media-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
 .media-block__placeholder {
@@ -417,15 +432,20 @@ h3 {
 
 .room-card__image {
   aspect-ratio: 16 / 10;
-  background: var(--color-surface-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+}
+
+.room-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.room-card:hover .room-card__image img {
+  transform: scale(1.05);
 }
 
 .room-card__body {
@@ -468,11 +488,11 @@ h3 {
 }
 
 .room-card__amenities li::before {
-  content: '\2022';
+  content: '•';
   color: var(--color-gold);
 }
 
-/* ---------- Features List ---------- */
+/* ---------- Amenities / Features List ---------- */
 .features-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -499,7 +519,7 @@ h3 {
   line-height: 1.6;
 }
 
-/* ---------- Testimonials ---------- */
+/* ---------- Testimonials / Social Proof ---------- */
 .testimonials {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -515,7 +535,7 @@ h3 {
 }
 
 .testimonial-card::before {
-  content: '""';
+  content: '"';
   position: absolute;
   top: 0.5rem;
   left: 1rem;
@@ -568,7 +588,7 @@ h3 {
   color: var(--color-text-muted);
 }
 
-/* ---------- Booking Form ---------- */
+/* ---------- Booking / Enquiry Form ---------- */
 .form-section {
   max-width: 640px;
   margin: 0 auto;
@@ -677,7 +697,7 @@ h3 {
   margin-top: var(--space-lg);
 }
 
-/* ---------- Map Placeholder ---------- */
+/* ---------- Location / Map ---------- */
 .map-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -703,23 +723,18 @@ h3 {
 
 .gallery-item {
   aspect-ratio: 4 / 3;
-  background: var(--color-surface);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-surface);
   border: 1px solid rgba(200, 148, 74, 0.05);
-  transition: border-color var(--duration-fast);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
   cursor: pointer;
 }
 
 .gallery-item:hover {
-  border-color: rgba(200, 148, 74, 0.2);
+  border-color: rgba(200, 148, 74, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* ---------- Footer ---------- */
@@ -788,7 +803,7 @@ h3 {
   color: var(--color-text-muted);
 }
 
-/* ---------- Scroll Animations ---------- */
+/* ---------- Animations (Scroll-triggered via Intersection Observer) ---------- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);

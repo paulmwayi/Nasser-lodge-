@@ -29,26 +29,12 @@ nasser-lodge/
 ├── index.html              # Main landing page (single-page scroll narrative)
 ├── pages/
 │   ├── gallery.html        # Photo gallery (grid layout)
-│   ├── about.html          # About, directions, story
-│   └── book.html           # Booking page with mobile money payments
+│   └── about.html          # About, directions, story
 ├── css/
 │   └── style.css           # Global stylesheet (design system + responsive)
 ├── js/
 │   └── main.js             # Navigation, animations, form submission
-├── assets/
-│   └── logo.png            # Nasser Lodge logo
-└── images/                 # Real photography
-    ├── room-*.jpg          # Room photos (standard, deluxe)
-    ├── lodge-*.jpg         # Lodge exteriors and grounds
-    ├── dining-*.jpg        # Dining room and food
-    ├── restaurant.jpg      # Restaurant interior
-    ├── reception.jpg       # Front desk
-    ├── banquet-*.jpg       # Banquet hall and events
-    ├── hallway-*.jpg       # Hallway with chandelier
-    ├── staircase*.jpg      # Staircase and stairway
-    ├── courtyard.jpg       # Shaded courtyard garden
-    ├── nasser-signboard*.jpg # Welcome signage
-    └── conference-room.jpg # Conference facilities
+└── images/                 # (Placeholder — add actual photos here)
 ```
 
 ---
@@ -89,13 +75,10 @@ nasser-lodge/
 - ✅ Mobile-responsive with hamburger navigation
 - ✅ Scroll-triggered animations (Intersection Observer)
 - ✅ Room cards with rates, amenities, and glass-tag styling
-- ✅ Booking page with mobile money payments (Airtel Money, MTN MoMo, Zamtel Kwacha)
-- ✅ Digital receipt generation after payment confirmation
 - ✅ Enquiry form with WhatsApp fallback submission
 - ✅ Direct WhatsApp, Call, and Email CTAs
 - ✅ Social proof section (Google 4.2★, guest testimonials)
 - ✅ Location/culture section (Kuomboka, Liuwa Plain, Barotse Floodplain)
-- ✅ Real photography throughout (rooms, grounds, dining, exteriors)
 - ✅ Structured data (Schema.org LodgingBusiness) for SEO
 - ✅ Open Graph meta tags
 
@@ -108,19 +91,18 @@ Based on the PRD sections:
 ### Phase 1 (Current)
 - [x] Responsive 2D landing page
 - [x] Room cards with rates and amenities
-- [x] Booking page with mobile money support
-- [x] Digital receipt system
+- [x] Booking enquiry form
 - [x] WhatsApp/Call/Email CTAs
-- [x] Gallery page with real photos
+- [x] Gallery page structure
 - [x] About page with directions
 
 ### Phase 1.5 — Enhancements
-- [x] Replace all placeholder images with real photography
-- [x] Add logo to navigation
+- [ ] Replace all placeholder images with real photography
 - [ ] Add Google Maps embed (P4HQ+W93, Mongu)
 - [ ] Add Facebook page feed embed or link
 - [ ] Finalize rates and room names with lodge management
 - [ ] Add Plausible or GA4 analytics
+- [ ] CMS integration (Sanity.io or Contentful)
 
 ### Phase 2 — Immersive Upgrades (per PRD)
 - [ ] 3D hero experience with Three.js / React Three Fiber
@@ -128,7 +110,7 @@ Based on the PRD sections:
 - [ ] Scroll-driven camera animation (GSAP + ScrollTrigger)
 - [ ] Lite mode with device/bandwidth detection
 - [ ] Booking calendar with availability
-- [ ] Online payment integration
+- [ ] Mobile money deposit (Airtel Money / MTN MoMo)
 
 ---
 
@@ -138,6 +120,12 @@ Based on the PRD sections:
 - **Email**: nasserlodges49@gmail.com
 - **Address**: P4HQ+W93, Lusaka Road, Mongu, Western Province, Zambia
 - **Facebook**: [facebook.com/nasserlodge](https://facebook.com/nasserlodge)
+
+---
+
+## 📄 Reference
+
+- [Nasser Lodge 3D Website PRD v1.0](../Nasser_Lodge_3D_Website_PRD.md)
 
 ---
 

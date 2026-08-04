@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ----- Booking Form Submission ----- */
+  /* ----- Booking Form Submission (on book.html only) ----- */
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
@@ -80,31 +80,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const message = encodeURIComponent(
         `*Nasser Lodge Booking Enquiry*\n\n` +
-        `Name: ${data.name}\n` +
-        `Email: ${data.email}\n` +
-        `Phone: ${data.phone}\n` +
-        `Check-in: ${data.checkin}\n` +
-        `Check-out: ${data.checkout}\n` +
-        `Room Type: ${data.room_type}\n` +
-        `Guests: ${data.guests}\n` +
-        `Message: ${data.message || '—'}`
+        `Name: ${data.fullname || data.name}\n` +
+        `Phone: +260 ${data.phone}\n` +
+        `(Please confirm availability and deposit amount)`
       );
 
       const whatsappUrl = `https://wa.me/260976327007?text=${message}`;
 
       const submitBtn = bookingForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = '✓ Sent! Opening WhatsApp…';
+      submitBtn.textContent = '✓ Opening WhatsApp…';
       submitBtn.style.background = '#25D366';
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
         submitBtn.textContent = originalText;
         submitBtn.style.background = '';
         submitBtn.disabled = false;
-        bookingForm.reset();
-      }, 800);
+      }, 2000);
     });
   }
 

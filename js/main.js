@@ -4,22 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ----- Navigation Scroll Effect ----- */
+  /* ----- Mobile Nav Toggle ----- */
   const nav = document.querySelector('.nav');
   const navToggle = document.querySelector('.nav__toggle');
   const navLinks = document.querySelector('.nav__links');
   const navLinkItems = document.querySelectorAll('.nav__links a');
 
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('nav--scrolled');
-    } else {
-      nav.classList.remove('nav--scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
+  // Nav is always visible (static) — no scroll-based class changes
 
   /* ----- Mobile Nav Toggle ----- */
   navToggle.addEventListener('click', () => {
@@ -47,9 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-on-scroll--visible');
+        // Also trigger stagger children
         if (entry.target.classList.contains('stagger-children')) {
           entry.target.classList.add('stagger-children--visible');
         }
+        // Don't unobserve so chapters can re-trigger
       }
     });
   }, observerOptions);
@@ -85,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `(Please confirm availability and deposit amount)`
       );
 
+      const whatsappUrl = `https://wa.me/260976327007?text=${message}`;
+
       const submitBtn = bookingForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = '✓ Opening WhatsApp…';
@@ -92,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
 
       setTimeout(() => {
+        // Only open WhatsApp if the book.html handler hasn't already done so
+        // (book.html has its own submit handler that overrides this)
         submitBtn.textContent = originalText;
         submitBtn.style.background = '';
         submitBtn.disabled = false;

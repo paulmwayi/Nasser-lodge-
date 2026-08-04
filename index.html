@@ -45,473 +45,178 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏡%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="#" class="nav__logo">Nasser Lodge</a>
-
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
     <ul class="nav__links">
       <li><a href="#rooms">Rooms</a></li>
       <li><a href="#dining">Dining</a></li>
       <li><a href="#location">Location</a></li>
       <li><a href="pages/gallery.html">Gallery</a></li>
-      <li><a href="#book" class="nav__cta">Book Now</a></li>
+      <li><a href="pages/book.html" class="nav__cta">Book Now</a></li>
     </ul>
   </nav>
 
-  <!-- ============================================================
-       HERO — Chapter 1: Arrival
-       ============================================================ -->
   <section class="hero" id="home">
+    <img class="hero__bg" src="images/lodge-entrance.jpg" alt="Nasser Lodge entrance — Mongu, Western Province, Zambia" loading="eager">
     <div class="hero__content">
       <span class="section-label">Western Province, Zambia</span>
       <h1>Nasser<br>Lodge</h1>
       <p class="hero__tagline">Where luxury feels like home</p>
     </div>
-
-    <p class="hero__byline">Mongu &bull; Lusaka Road &bull; Since 2014</p>
-
-    <div class="hero__scroll-hint" aria-hidden="true">
-      Scroll to explore
-    </div>
+    <p class="hero__byline">Mongu • Lusaka Road • Since 2014</p>
+    <div class="hero__scroll-hint" aria-hidden="true">Scroll to explore</div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 2: The Grounds
-       ============================================================ -->
   <section class="chapter chapter--split" id="grounds">
     <div class="chapter__inner">
       <div class="animate-on-scroll">
         <span class="section-label">The Property</span>
         <h2>Arrive at<br>your home<br>in Mongu</h2>
-        <p class="subtitle">
-          Just off Lusaka Road, Nasser Lodge welcomes you with lush gardens,
-          shaded verandas, and the quiet confidence of a place that knows
-          what hospitality means. The air is different here — open skies,
-          birdsong, and the rhythm of the Barotse Plain.
-        </p>
-
+        <p class="subtitle">Just off Lusaka Road, Nasser Lodge welcomes you with lush gardens, shaded verandas, and the quiet confidence of a place that knows what hospitality means. The air is different here — open skies, birdsong, and the rhythm of the Barotse Plain.</p>
         <ul class="features-list" style="margin-top: var(--space-xl);">
-          <li class="feature-item">
-            <div class="feature-item__title">Gardens &amp; Grounds</div>
-            <div class="feature-item__desc">Landscaped gardens with shaded seating areas, perfect for morning coffee or an evening sundowner.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">Secure Parking</div>
-            <div class="feature-item__desc">Ample, secure on-site parking for guests — whether you arrive by sedan or 4×4.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">Central Location</div>
-            <div class="feature-item__desc">Minutes from Mongu town centre, the harbour, and the main commercial district.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">24-Hour Service</div>
-            <div class="feature-item__desc">Round-the-clock front desk, security, and room service — because comfort doesn't keep office hours.</div>
-          </li>
+          <li class="feature-item"><div class="feature-item__title">Gardens &amp; Grounds</div><div class="feature-item__desc">Landscaped gardens with shaded seating areas, perfect for morning coffee or an evening sundowner.</div></li>
+          <li class="feature-item"><div class="feature-item__title">Secure Parking</div><div class="feature-item__desc">Ample, secure on-site parking for guests — whether you arrive by sedan or 4×4.</div></li>
+          <li class="feature-item"><div class="feature-item__title">Central Location</div><div class="feature-item__desc">Minutes from Mongu town centre, the harbour, and the main commercial district.</div></li>
+          <li class="feature-item"><div class="feature-item__title">24-Hour Service</div><div class="feature-item__desc">Round-the-clock front desk, security, and room service — because comfort doesn't keep office hours.</div></li>
         </ul>
       </div>
-
       <div class="media-block animate-on-scroll">
-        <div class="media-block__placeholder">
-          <div class="media-block__icon">🌿</div>
-          <div class="media-block__label">Property Exterior Photo</div>
-          <div style="font-size:0.7rem;color:var(--color-text-muted);">Add professional photo of lodge grounds &amp; entrance</div>
-        </div>
+        <img src="images/lodge-exterior.jpg" alt="Nasser Lodge exterior — gardens, landscaped grounds and secure parking" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 3: The Rooms
-       ============================================================ -->
   <section class="chapter chapter--alt" id="rooms">
     <div class="chapter__inner">
       <div class="animate-on-scroll" style="text-align:center;margin-bottom:var(--space-xl);">
         <span class="section-label">Accommodation</span>
         <h2>Rest in comfort,<br>wake to beauty</h2>
-        <p class="subtitle" style="margin:0 auto;">
-          Every room at Nasser Lodge is designed for rest — clean lines,
-          quality linens, and the quiet you need after a long journey across
-          the Western Province.
-        </p>
+        <p class="subtitle" style="margin:0 auto;">Every room at Nasser Lodge is designed for rest — clean lines, quality linens, and the quiet you need after a long journey across the Western Province.</p>
       </div>
-
       <div class="rooms-grid stagger-children">
-        <!-- Standard Room -->
         <article class="room-card">
-          <div class="room-card__image">[ Standard Room Photo ]</div>
+          <div class="room-card__image"><img src="images/room-standard.jpg" alt="Standard Room at Nasser Lodge — Queen bed with canopy, en-suite bathroom, air conditioning" loading="lazy"></div>
           <div class="room-card__body">
             <div class="glass-tag">Most Popular</div>
             <h3 class="room-card__title">Standard Room</h3>
             <div class="room-card__price">ZMW 500 <span>/ night</span></div>
-            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">
-              A comfortable, well-appointed room with everything you need for a restful stay. Ideal for solo travelers and couples.
-            </p>
-            <ul class="room-card__amenities">
-              <li>Queen bed</li>
-              <li>En-suite bathroom</li>
-              <li>Satellite TV</li>
-              <li>Free WiFi</li>
-              <li>Work desk</li>
-              <li>Air conditioning</li>
-            </ul>
+            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">A comfortable, well-appointed room with everything you need for a restful stay. Ideal for solo travelers and couples.</p>
+            <ul class="room-card__amenities"><li>Queen bed</li><li>En-suite bathroom</li><li>Satellite TV</li><li>Free WiFi</li><li>Work desk</li><li>Air conditioning</li></ul>
           </div>
         </article>
-
-        <!-- Deluxe Room -->
         <article class="room-card">
-          <div class="room-card__image">[ Deluxe Room Photo ]</div>
+          <div class="room-card__image"><img src="images/room-deluxe.jpg" alt="Deluxe Room at Nasser Lodge — King bed with tufted headboard, sitting area, garden view" loading="lazy"></div>
           <div class="room-card__body">
             <h3 class="room-card__title">Deluxe Room</h3>
             <div class="room-card__price">ZMW 750 <span>/ night</span></div>
-            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">
-              Extra space, premium furnishings, and a sitting area. Perfect for business travellers and those who appreciate a little more room.
-            </p>
-            <ul class="room-card__amenities">
-              <li>King bed</li>
-              <li>En-suite bathroom</li>
-              <li>Sitting area</li>
-              <li>Satellite TV</li>
-              <li>Free WiFi</li>
-              <li>Mini fridge</li>
-              <li>Air conditioning</li>
-              <li>Garden view</li>
-            </ul>
+            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">Extra space, premium furnishings, and a sitting area. Perfect for business travellers and those who appreciate a little more room.</p>
+            <ul class="room-card__amenities"><li>King bed</li><li>En-suite bathroom</li><li>Sitting area</li><li>Satellite TV</li><li>Free WiFi</li><li>Mini fridge</li><li>Air conditioning</li><li>Garden view</li></ul>
           </div>
         </article>
-
-        <!-- Executive Suite -->
         <article class="room-card">
-          <div class="room-card__image">[ Executive Suite Photo ]</div>
+          <div class="room-card__image"><img src="images/reception.jpg" alt="Executive Suite at Nasser Lodge — Premium suite with private balcony, living room, premium toiletries" loading="lazy"></div>
           <div class="room-card__body">
             <h3 class="room-card__title">Executive Suite</h3>
             <div class="room-card__price">ZMW 1,200 <span>/ night</span></div>
-            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">
-              Our finest accommodation — a spacious suite with separate living area, premium amenities, and the best views on the property.
-            </p>
-            <ul class="room-card__amenities">
-              <li>King bed</li>
-              <li>En-suite bathroom</li>
-              <li>Separate living room</li>
-              <li>Satellite TV</li>
-              <li>Free WiFi</li>
-              <li>Mini fridge</li>
-              <li>Air conditioning</li>
-              <li>Premium toiletries</li>
-              <li>Private balcony</li>
-            </ul>
+            <p style="font-size:0.9rem;color:var(--color-text-secondary);line-height:1.6;">Our finest accommodation — a spacious suite with separate living area, premium amenities, and the best views on the property.</p>
+            <ul class="room-card__amenities"><li>King bed</li><li>En-suite bathroom</li><li>Separate living room</li><li>Satellite TV</li><li>Free WiFi</li><li>Mini fridge</li><li>Air conditioning</li><li>Premium toiletries</li><li>Private balcony</li></ul>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 4: Dining & Hospitality
-       ============================================================ -->
   <section class="chapter chapter--split" id="dining">
     <div class="chapter__inner">
       <div class="media-block animate-on-scroll">
-        <div class="media-block__placeholder">
-          <div class="media-block__icon">🍽️</div>
-          <div class="media-block__label">Restaurant &amp; Bar Photo</div>
-          <div style="font-size:0.7rem;color:var(--color-text-muted);">Add professional photo of dining area</div>
-        </div>
+        <img src="images/restaurant.jpg" alt="Nasser Lodge restaurant — full-service dining with red accent decor and beverage coolers" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
       </div>
-
       <div class="animate-on-scroll">
         <span class="section-label">Dining &amp; Hospitality</span>
         <h2>Tastes of<br>the Western<br>Province</h2>
-        <p class="subtitle">
-          Our restaurant serves a blend of Zambian classics and international
-          comfort food — fresh ingredients, generous portions, and the warmth
-          of home cooking. The bar is stocked and the veranda is waiting.
-        </p>
-
+        <p class="subtitle">Our restaurant serves a blend of Zambian classics and international comfort food — fresh ingredients, generous portions, and the warmth of home cooking. The bar is stocked and the veranda is waiting.</p>
         <ul class="features-list" style="margin-top: var(--space-xl);">
-          <li class="feature-item">
-            <div class="feature-item__title">Full-Service Restaurant</div>
-            <div class="feature-item__desc">Breakfast, lunch, and dinner daily. Zambian specialties alongside international favourites — all prepared fresh.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">Bar &amp; Lounge</div>
-            <div class="feature-item__desc">A carefully curated selection of beers, wines, spirits, and cocktails — best enjoyed on the veranda as the sun sets over Mongu.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">Room Service</div>
-            <div class="feature-item__desc">Dine in the privacy of your room — our full menu is available for in-room dining from morning until late.</div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-item__title">Events &amp; Functions</div>
-            <div class="feature-item__desc">Hosting a wedding, conference, or family gathering? Our team handles catering and setup — just bring your guests.</div>
-          </li>
+          <li class="feature-item"><div class="feature-item__title">Full-Service Restaurant</div><div class="feature-item__desc">Breakfast, lunch, and dinner daily. Zambian specialties alongside international favourites — all prepared fresh.</div></li>
+          <li class="feature-item"><div class="feature-item__title">Bar &amp; Lounge</div><div class="feature-item__desc">A carefully curated selection of beers, wines, spirits, and cocktails — best enjoyed on the veranda as the sun sets over Mongu.</div></li>
+          <li class="feature-item"><div class="feature-item__title">Room Service</div><div class="feature-item__desc">Dine in the privacy of your room — our full menu is available for in-room dining from morning until late.</div></li>
+          <li class="feature-item"><div class="feature-item__title">Events &amp; Functions</div><div class="feature-item__desc">Hosting a wedding, conference, or family gathering? Our team handles catering and setup — just bring your guests.</div></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 5: Location & Culture
-       ============================================================ -->
   <section class="chapter chapter--alt" id="location">
     <div class="chapter__inner">
       <div class="animate-on-scroll" style="text-align:center;margin-bottom:var(--space-xl);">
         <span class="section-label">Mongu &amp; Western Province</span>
         <h2>The heart of<br>Barotseland</h2>
-        <p class="subtitle" style="margin:0 auto;">
-          Nasser Lodge sits at the crossroads of culture, nature, and history.
-          Mongu is the gateway to the Barotse Floodplain, the Kuomboka Ceremony,
-          and Liuwa Plain National Park — one of Africa's most untouched wildernesses.
-        </p>
+        <p class="subtitle" style="margin:0 auto;">Nasser Lodge sits at the crossroads of culture, nature, and history. Mongu is the gateway to the Barotse Floodplain, the Kuomboka Ceremony, and Liuwa Plain National Park — one of Africa's most untouched wildernesses.</p>
       </div>
-
       <div class="features-list stagger-children">
-        <div class="feature-item">
-          <div class="feature-item__title">Kuomboka Ceremony</div>
-          <div class="feature-item__desc">
-            Witness the Litunga's royal barge procession as the Lozi king moves
-            from the floodplain to higher ground — one of Africa's great cultural
-            spectacles (usually March/April).
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-item__title">Liuwa Plain National Park</div>
-          <div class="feature-item__desc">
-            A remote, pristine wilderness known for its wildebeest migration
-            (second only to the Serengeti), vast open plains, and predator
-            viewing — accessible from Mongu.
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-item__title">Barotse Floodplain</div>
-          <div class="feature-item__desc">
-            The Zambezi's upper floodplain — a UNESCO-recognized wetland of
-            extraordinary biodiversity, traditional fishing villages, and
-            unforgettable sunsets.
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-item__title">Mongu Harbour</div>
-          <div class="feature-item__desc">
-            The bustling waterfront where local boats ferry goods and people
-            across the river — a vibrant slice of daily life just minutes
-            from the lodge.
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-item__title">Local Markets</div>
-          <div class="feature-item__desc">
-            Explore Mongu's markets for handwoven baskets, traditional crafts,
-            fresh produce, and the unmistakable energy of a Zambian trading town.
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-item__title">Day Trips &amp; Tours</div>
-          <div class="feature-item__desc">
-            Our staff can arrange guided excursions to nearby attractions —
-            from village visits to birding walks and cultural experiences.
-            Just ask at reception.
-          </div>
-        </div>
+        <div class="feature-item"><div class="feature-item__title">Kuomboka Ceremony</div><div class="feature-item__desc">Witness the Litunga's royal barge procession as the Lozi king moves from the floodplain to higher ground — one of Africa's great cultural spectacles (usually March/April).</div></div>
+        <div class="feature-item"><div class="feature-item__title">Liuwa Plain National Park</div><div class="feature-item__desc">A remote, pristine wilderness known for its wildebeest migration (second only to the Serengeti), vast open plains, and predator viewing — accessible from Mongu.</div></div>
+        <div class="feature-item"><div class="feature-item__title">Barotse Floodplain</div><div class="feature-item__desc">The Zambezi's upper floodplain — a UNESCO-recognized wetland of extraordinary biodiversity, traditional fishing villages, and unforgettable sunsets.</div></div>
+        <div class="feature-item"><div class="feature-item__title">Mongu Harbour</div><div class="feature-item__desc">The bustling waterfront where local boats ferry goods and people across the river — a vibrant slice of daily life just minutes from the lodge.</div></div>
+        <div class="feature-item"><div class="feature-item__title">Local Markets</div><div class="feature-item__desc">Explore Mongu's markets for handwoven baskets, traditional crafts, fresh produce, and the unmistakable energy of a Zambian trading town.</div></div>
+        <div class="feature-item"><div class="feature-item__title">Day Trips &amp; Tours</div><div class="feature-item__desc">Our staff can arrange guided excursions to nearby attractions — from village visits to birding walks and cultural experiences. Just ask at reception.</div></div>
       </div>
-
-      <!-- Map -->
-      <div class="map-placeholder animate-on-scroll" style="margin-top:var(--space-xl);">
-        📍 Google Map: P4HQ+W93, Lusaka Road, Mongu, Zambia<br>
-        <span style="font-size:0.6rem;">(Embedded map will appear here in production)</span>
-      </div>
+      <div class="map-placeholder animate-on-scroll" style="margin-top:var(--space-xl);">📍 Google Map: P4HQ+W93, Lusaka Road, Mongu, Zambia<br><span style="font-size:0.6rem;">(Embedded map will appear here in production)</span></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 6: Social Proof
-       ============================================================ -->
   <section class="chapter" id="reviews">
     <div class="chapter__inner">
       <div class="animate-on-scroll" style="text-align:center;margin-bottom:var(--space-xl);">
         <span class="section-label">Guest Experience</span>
-
-        <div class="rating-badge">
-          <span class="rating-badge__stars">★ ★ ★ ★ <span style="opacity:0.5;">★</span></span>
-          <span class="rating-badge__score">4.2</span>
-          <span class="rating-badge__count">— 41 Google reviews</span>
-        </div>
-
+        <div class="rating-badge"><span class="rating-badge__stars">★ ★ ★ ★ <span style="opacity:0.5;">★</span></span><span class="rating-badge__score">4.2</span><span class="rating-badge__count">— 41 Google reviews</span></div>
         <h2>What our guests say</h2>
       </div>
-
       <div class="testimonials stagger-children">
-        <div class="testimonial-card">
-          <p class="testimonial-card__text">
-            A hidden gem in Mongu. The rooms are clean, the staff are incredibly
-            welcoming, and the food is outstanding. It really does feel like a
-            home away from home.
-          </p>
-          <div class="testimonial-card__author">— Business traveller, Lusaka</div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-card__text">
-            Stayed here on our way to Liuwa Plain and couldn't have asked for
-            better hospitality. The garden is beautiful, the bar is well-stocked,
-            and the team went above and beyond for us.
-          </p>
-          <div class="testimonial-card__author">— International traveller</div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-card__text">
-            Best lodge in Mongu, hands down. The Executive Suite is worth every
-            Kwacha — spacious, spotless, and that balcony view at sunset is
-            something else entirely.
-          </p>
-          <div class="testimonial-card__author">— Returning guest, Ndola</div>
-        </div>
+        <div class="testimonial-card"><p class="testimonial-card__text">A hidden gem in Mongu. The rooms are clean, the staff are incredibly welcoming, and the food is outstanding. It really does feel like a home away from home.</p><div class="testimonial-card__author">— Business traveller, Lusaka</div></div>
+        <div class="testimonial-card"><p class="testimonial-card__text">Stayed here on our way to Liuwa Plain and couldn't have asked for better hospitality. The garden is beautiful, the bar is well-stocked, and the team went above and beyond for us.</p><div class="testimonial-card__author">— International traveller</div></div>
+        <div class="testimonial-card"><p class="testimonial-card__text">Best lodge in Mongu, hands down. The Executive Suite is worth every Kwacha — spacious, spotless, and that balcony view at sunset is something else entirely.</p><div class="testimonial-card__author">— Returning guest, Ndola</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CHAPTER 7: Booking & Contact
-       ============================================================ -->
   <section class="chapter chapter--alt" id="book">
     <div class="chapter__inner">
       <div class="animate-on-scroll" style="text-align:center;margin-bottom:var(--space-xl);">
         <span class="section-label">Reservations</span>
         <h2>Book your stay</h2>
-        <p class="subtitle" style="margin:0 auto;">
-          Ready to experience Nasser Lodge? Send us an enquiry or reach out directly —
-          we'll confirm availability within hours.
-        </p>
+        <p class="subtitle" style="margin:0 auto;">Ready to experience Nasser Lodge? Send us an enquiry or reach out directly — we'll confirm availability within hours.</p>
       </div>
-
       <div class="form-section animate-on-scroll">
         <form id="booking-form">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
-            <div class="form-group">
-              <label class="form-label" for="name">Full Name *</label>
-              <input class="form-input" type="text" id="name" name="name" required placeholder="Your full name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Email *</label>
-              <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com">
-            </div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
-            <div class="form-group">
-              <label class="form-label" for="phone">Phone / WhatsApp *</label>
-              <input class="form-input" type="tel" id="phone" name="phone" required placeholder="+260 XXX XXX XXX">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="room_type">Room Type</label>
-              <select class="form-select" id="room_type" name="room_type">
-                <option value="">Select a room…</option>
-                <option value="Standard">Standard Room — ZMW 500/night</option>
-                <option value="Deluxe">Deluxe Room — ZMW 750/night</option>
-                <option value="Executive Suite">Executive Suite — ZMW 1,200/night</option>
-                <option value="Not sure">Not sure — advise me</option>
-              </select>
-            </div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-md);">
-            <div class="form-group">
-              <label class="form-label" for="checkin">Check-in Date *</label>
-              <input class="form-input" type="date" id="checkin" name="checkin" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="checkout">Check-out Date *</label>
-              <input class="form-input" type="date" id="checkout" name="checkout" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="guests">Guests</label>
-              <select class="form-select" id="guests" name="guests">
-                <option value="1">1 guest</option>
-                <option value="2" selected>2 guests</option>
-                <option value="3">3 guests</option>
-                <option value="4">4 guests</option>
-                <option value="5+">5+ guests</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="message">Message (optional)</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="Any special requests, questions, or details we should know…"></textarea>
-          </div>
-
-          <div class="cta-group">
-            <button type="submit" class="btn btn--primary">Send Enquiry</button>
-            <span style="font-size:0.75rem;color:var(--color-text-muted);align-self:center;">
-              or contact us directly:
-            </span>
-          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);"><div class="form-group"><label class="form-label" for="name">Full Name *</label><input class="form-input" type="text" id="name" name="name" required placeholder="Your full name"></div><div class="form-group"><label class="form-label" for="email">Email *</label><input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com"></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);"><div class="form-group"><label class="form-label" for="phone">Phone / WhatsApp *</label><input class="form-input" type="tel" id="phone" name="phone" required placeholder="+260 XXX XXX XXX"></div><div class="form-group"><label class="form-label" for="room_type">Room Type</label><select class="form-select" id="room_type" name="room_type"><option value="">Select a room…</option><option value="Standard">Standard Room — ZMW 500/night</option><option value="Deluxe">Deluxe Room — ZMW 750/night</option><option value="Executive Suite">Executive Suite — ZMW 1,200/night</option><option value="Not sure">Not sure — advise me</option></select></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-md);"><div class="form-group"><label class="form-label" for="checkin">Check-in Date *</label><input class="form-input" type="date" id="checkin" name="checkin" required></div><div class="form-group"><label class="form-label" for="checkout">Check-out Date *</label><input class="form-input" type="date" id="checkout" name="checkout" required></div><div class="form-group"><label class="form-label" for="guests">Guests</label><select class="form-select" id="guests" name="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5+">5+ guests</option></select></div></div>
+          <div class="form-group"><label class="form-label" for="message">Message (optional)</label><textarea class="form-textarea" id="message" name="message" placeholder="Any special requests, questions, or details we should know…"></textarea></div>
+          <div class="cta-group"><button type="submit" class="btn btn--primary">Send Enquiry</button><span style="font-size:0.75rem;color:var(--color-text-muted);align-self:center;">or contact us directly:</span></div>
         </form>
-
         <div class="cta-group" style="margin-top:var(--space-md);">
-          <a href="https://wa.me/260976327007?text=Hello%20Nasser%20Lodge%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." class="btn btn--whatsapp" target="_blank" rel="noopener">
-            💬 WhatsApp
-          </a>
-          <a href="tel:+260976327007" class="btn btn--call">
-            📞 Call +260 976 327 007
-          </a>
-          <a href="mailto:nasserlodges49@gmail.com" class="btn btn--outline">
-            ✉️ Email Us
-          </a>
+          <a href="https://wa.me/260976327007?text=Hello%20Nasser%20Lodge%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." class="btn btn--whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="tel:+260976327007" class="btn btn--call">📞 Call +260 976 327 007</a>
+          <a href="mailto:nasserlodges49@gmail.com" class="btn btn--outline">✉️ Email Us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
-      <div>
-        <div class="footer__brand">Nasser Lodge</div>
-        <p class="footer__desc">
-          Where luxury feels like home. Nasser Lodge offers premium accommodation,
-          dining, and warm Zambian hospitality in the heart of Mongu, Western Province.
-        </p>
-      </div>
-
-      <div>
-        <div class="footer__heading">Quick Links</div>
-        <ul class="footer__links">
-          <li><a href="#rooms">Rooms &amp; Rates</a></li>
-          <li><a href="#dining">Dining</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a href="pages/gallery.html">Gallery</a></li>
-          <li><a href="#book">Book Now</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer__heading">Contact</div>
-        <ul class="footer__links">
-          <li>📍 P4HQ+W93, Lusaka Road, Mongu</li>
-          <li>📞 <a href="tel:+260976327007">+260 976 327 007</a></li>
-          <li>✉️ <a href="mailto:nasserlodges49@gmail.com">nasserlodges49@gmail.com</a></li>
-          <li><a href="https://facebook.com/nasserlodge" target="_blank" rel="noopener">📘 Facebook</a></li>
-        </ul>
-      </div>
+      <div><div class="footer__brand">Nasser Lodge</div><p class="footer__desc">Where luxury feels like home. Nasser Lodge offers premium accommodation, dining, and warm Zambian hospitality in the heart of Mongu, Western Province.</p></div>
+      <div><div class="footer__heading">Quick Links</div><ul class="footer__links"><li><a href="#rooms">Rooms &amp; Rates</a></li><li><a href="#dining">Dining</a></li><li><a href="#location">Location</a></li><li><a href="pages/gallery.html">Gallery</a></li><li><a href="pages/book.html">Book Now</a></li></ul></div>
+      <div><div class="footer__heading">Contact</div><ul class="footer__links"><li>📍 P4HQ+W93, Lusaka Road, Mongu</li><li>📞 <a href="tel:+260976327007">+260 976 327 007</a></li><li>✉️ <a href="mailto:nasserlodges49@gmail.com">nasserlodges49@gmail.com</a></li><li><a href="https://facebook.com/nasserlodge" target="_blank" rel="noopener">📘 Facebook</a></li></ul></div>
     </div>
-
-    <div class="footer__bottom">
-      <span>&copy; <span id="current-year">2026</span> Nasser Lodge. All rights reserved.</span>
-      <span>Mongu, Western Province, Zambia</span>
-    </div>
+    <div class="footer__bottom"><span>&copy; <span id="current-year">2026</span> Nasser Lodge. All rights reserved.</span><span>Mongu, Western Province, Zambia</span></div>
   </footer>
 
   <script src="js/main.js"></script>

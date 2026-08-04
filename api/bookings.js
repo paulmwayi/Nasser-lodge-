@@ -2,6 +2,7 @@
 
 const { readBookings, writeBookings } = require('./_db');
 const flw = require('./_flutterwave');
+const sms = require('./_sms');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -93,40 +94,61 @@ module.exports = async function handler(req, res) {
       flwStatus: null
     };
 
-    // If paymentMethod and deposit are provided, initiate Flutterwave charge
+    // If paymentMethod and deposit are provided, try to initiate payment charge
+    // Falls back gracefully if no payment API key is configured OR if API call fails
     let flwResult = null;
-    if (paymentMethod && deposit > 0 && process.env.FLW_SECRET_KEY) {
-      try {
-        flwResult = await flw.initiateMobileMoneyCharge({
-          name: name,
-          phone: phone,
-          email: email || ('guest-' + phone.replace(/[^0-9]/g, '') + '@nasserlodge.com'),
-          network: paymentMethod,
-          amount: deposit,
-          currency: 'ZMW',
-          reference: bookingRef,
-          meta: { bookingId: newBooking.id, room: room, checkin: checkin, checkout: checkout }
-        });
+    let paymentInitiated = false;
+    let fallbackReason = null;  // null, 'no_api_key', or 'api_error'
+    const hasPaymentAPI = !!(process.env.FLW_SECRET_KEY);
 
-        // Store Flutterwave charge data on the booking
-        newBooking.flwChargeId = flwResult.chargeId;
-        newBooking.flwRef = flwResult.reference;
-        newBooking.flwStatus = flwResult.status;
-        newBooking.paymentMethod = paymentMethod;
-        newBooking.deposit = deposit;
-        newBooking.balance = (total || 0) - deposit;
-      } catch (e) {
-        console.error('Flutterwave charge initiation failed:', e.message);
-        // Still save the booking — payment can be retried
+    if (paymentMethod && deposit > 0) {
+      newBooking.paymentMethod = paymentMethod;
+      newBooking.deposit = deposit;
+      newBooking.balance = (total || 0) - deposit;
+
+      if (hasPaymentAPI) {
+        try {
+          flwResult = await flw.initiateMobileMoneyCharge({
+            name: name,
+            phone: phone,
+            email: email || ('guest-' + phone.replace(/[^0-9]/g, '') + '@nasserlodge.com'),
+            network: paymentMethod,
+            amount: deposit,
+            currency: 'ZMW',
+            reference: bookingRef,
+            meta: { bookingId: newBooking.id, room: room, checkin: checkin, checkout: checkout }
+          });
+
+          newBooking.flwChargeId = flwResult.chargeId;
+          newBooking.flwRef = flwResult.reference;
+          newBooking.flwStatus = flwResult.status;
+          paymentInitiated = true;
+        } catch (e) {
+          console.error('Payment API failed, saving as pending:', e.message);
+          fallbackReason = 'api_error';
+          newBooking.flwStatus = 'api_unavailable';
+        }
+      } else {
+        fallbackReason = 'no_api_key';
       }
+      // When no payment API is configured or API fails, booking stays pending — admin confirms manually
     }
 
     bookings.push(newBooking);
     await writeBookings(bookings);
 
+    // Send SMS notification to admin for fallback bookings
+    if (!paymentInitiated && paymentMethod) {
+      sms.notifyAdminNewBooking(newBooking, fallbackReason).catch(e => {
+        console.error('SMS notification failed:', e);
+      });
+    }
+
     return res.status(201).json({
       success: true,
       booking: newBooking,
+      paymentInitiated: paymentInitiated,
+      fallbackReason: fallbackReason,
       flw: flwResult ? {
         chargeId: flwResult.chargeId,
         reference: flwResult.reference,

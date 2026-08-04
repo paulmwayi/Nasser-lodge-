@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1c1611;
+  color: #f6efe4;
+}
+
+/* Woven-pattern divider, a quiet nod to Lozi basketry — used once, sparingly */
+.woven-divider {
+  height: 6px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #c98a2c 0px,
+    #c98a2c 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -85,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `(Please confirm availability and deposit amount)`
       );
 
-      const whatsappUrl = `https://wa.me/260976327007?text=${message}`;
-
       const submitBtn = bookingForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = '✓ Opening WhatsApp…';
